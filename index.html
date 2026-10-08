@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GMV theo thương hiệu cho LIVE TikTok</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F0F4; --surface:#FFFFFF; --ink:#2B1E2F; --muted:#6E5E73; --line:#E4D9E3;
+  --accent:#C2245F; --accent-ink:#FFFFFF; --accent-soft:#F7DCE7; --bar:#E0457B; --warn:#9A5B00; --warn-soft:#FFF1D6;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#17121A; --surface:#211A24; --ink:#F3EDF4; --muted:#B9A9BE; --line:#3A2E3F;
+    --accent:#E0457B; --accent-ink:#FFFFFF; --accent-soft:#3A2230; --warn:#F2C26B; --warn-soft:#3A2E1A;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#17121A; --surface:#211A24; --ink:#F3EDF4; --muted:#B9A9BE; --line:#3A2E3F;
+  --accent:#E0457B; --accent-ink:#FFFFFF; --accent-soft:#3A2230; --warn:#F2C26B; --warn-soft:#3A2E1A;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 22px 64px}
+h1{font-size:clamp(26px,3.6vw,38px);line-height:1.15;font-weight:700;letter-spacing:-0.015em;margin:0 0 8px}
+.lead{color:var(--muted);margin:0 0 28px;max-width:60ch}
+.grid{display:grid;grid-template-columns:400px 1fr;gap:28px;align-items:start}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px}
+.step{display:flex;gap:12px;align-items:baseline;margin:0 0 10px;font-weight:650;font-size:16px}
+.step i{font-style:normal;flex:none;width:26px;height:26px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:13px;font-weight:700;transform:translateY(5px)}
+.block+.block{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+input[type=text],textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+input[type=text]:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+textarea{min-height:150px;resize:vertical;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{font:inherit;font-size:14px;font-weight:600;padding:10px 16px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn:hover{border-color:var(--accent)}
+.btn.p{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.p:hover{filter:brightness(1.05)}
+.btn[aria-disabled=true]{opacity:.45;pointer-events:none}
+.btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.help{color:var(--muted);font-size:13px;margin:8px 0 0}
+.help kbd{font-family:inherit;font-size:12px;padding:0 6px;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;background:var(--surface)}
+.msg{font-size:13px;margin-top:8px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:56px 20px}
+.empty b{display:block;color:var(--ink);font-size:17px;margin-bottom:6px}
+.sum{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:6px}
+.sum b{display:block;font-size:24px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-0.01em}
+.sum span{color:var(--muted);font-size:12.5px}
+.meta{color:var(--muted);font-size:13px;margin:4px 0 16px}
+.tablewrap{overflow-x:auto;margin:0 -4px}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th{font-weight:500;color:var(--muted);font-size:12.5px;text-align:right;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left;white-space:normal;min-width:150px}
+td .bar{height:4px;border-radius:2px;background:var(--bar);margin-top:5px;opacity:.9}
+tr.unk td:first-child{color:var(--warn)}
+.unkbox{margin-top:20px;background:var(--warn-soft);border-radius:12px;padding:14px 16px}
+.unkbox h3{margin:0 0 6px;font-size:15px;color:var(--warn)}
+.unkbox ul{margin:6px 0 12px;padding-left:18px;font-size:13px}
+.unkbox .row input{flex:1;min-width:140px}
+.rules{margin-top:10px;font-size:13px;color:var(--muted)}
+.rules span{display:inline-flex;gap:6px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:2px 4px 2px 10px;margin:4px 4px 0 0}
+.rules button{all:unset;cursor:pointer;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;color:var(--muted)}
+.rules button:hover{background:var(--accent-soft);color:var(--accent)}
+.rules button:focus-visible{outline:2px solid var(--accent)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}
+.sr{position:absolute;left:-9999px}
+@media (max-width:920px){.grid{grid-template-columns:1fr}.wrap{padding:28px 16px 48px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>GMV theo thương hiệu cho LIVE TikTok</h1>
+  <p class="lead">Nhập room ID, mở LIVE Dashboard, sao chép cả trang rồi dán vào đây. Bảng GMV gom theo thương hiệu hiện ra ngay.</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="block">
+        <p class="step"><i>1</i>Mở LIVE Dashboard của phiên live</p>
+        <label for="room">Room ID hoặc link phiên live</label>
+        <input type="text" id="room" inputmode="numeric" autocomplete="off" placeholder="Ví dụ 7694126248653572871">
+        <div class="row" style="margin-top:10px">
+          <a class="btn p" id="open" target="_blank" rel="noopener" aria-disabled="true" href="#">Mở LIVE Dashboard</a>
+          <button class="btn" id="copylink" type="button" aria-disabled="true">Sao chép link</button>
+        </div>
+        <p class="msg" id="lmsg" role="status" aria-live="polite"></p>
+        <p class="help">Trang sẽ mở trong tab mới. Bạn cần đã đăng nhập Partner Center. Nếu xem từ LIVE Studio hoặc trang khác, cứ mở đúng trang có bảng Products của phiên live.</p>
+      </div>
+      <div class="block">
+        <p class="step"><i>2</i>Sao chép cả trang</p>
+        <p class="help" style="margin-top:0">Đợi bảng Products tải xong, bấm vào chỗ trống trên trang rồi nhấn <kbd>⌘</kbd> <kbd>A</kbd> và <kbd>⌘</kbd> <kbd>C</kbd> (Windows: <kbd>Ctrl</kbd> <kbd>A</kbd>, <kbd>Ctrl</kbd> <kbd>C</kbd>).</p>
+      </div>
+      <div class="block">
+        <p class="step"><i>3</i>Dán vào đây</p>
+        <label for="paste">Nội dung trang LIVE Dashboard</label>
+        <textarea id="paste" placeholder="Nhấn ⌘ V hoặc Ctrl V vào ô này"></textarea>
+        <div class="row" style="margin-top:10px">
+          <button class="btn" id="clear" type="button">Xoá để dán lần mới</button>
+        </div>
+        <p class="msg" id="pmsg" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div class="card" id="result" aria-live="polite">
+      <div class="empty"><b>Chưa có dữ liệu</b>Dán nội dung trang LIVE Dashboard ở bước 3, bảng sẽ hiện ở đây.</div>
+    </div>
+  </div>
+</div>
+<textarea class="sr" id="clip" aria-hidden="true" tabindex="-1"></textarea>
+<script>
+(function(){
+var DEFAULT=[["CNP","\\bCNP\\b"],["The Whoo","WHOO"],["La Roche-Posay","\\bLRP\\b|La Roche"],["L'Oréal Professionnel","Or[ée]al Professionnel"],["Kérastase","K[ée]rastase"],["Matrix","MATRIX|\\[MX x"],["L'Occitane","Occitane"],["L'Oréal Paris","L'?\\s?Or[ée]al|LOREAL"],["Innisfree","Innisfree"],["Gaabor","Gaabor"],["Lancôme","LANC[ÔO]ME"],["Bioderma","Bioderma"],["AHC","\\bAHC\\b"],["David Health","DAVID HEALTH"],["CeraVe","\\bCRV\\b|Cerave"],["d'Alba","d'?Alba"],["Anessa","Anessa"],["Murad","Murad"],["Dutch Lady","Dutch Lady"],["Vinamilk","Vinamilk"],["Obagi","Obagi"],["Laneige","LANEIGE"],["Sulwhasoo","Sulwhasoo"],["3CE","3CE"],["Beplain","Beplain"],["OHUI","OHUI"],["Sensodyne","Sensodyne"],["Narciso Rodriguez","Narciso"],["Kotex","Kotex"],["Kiehl's","Kiehl"],["Paula's Choice","Paula"],["Neutrogena","Neutrogena"],["Blackmores","Blackmores"],["Candid","CANDID"],["YSL","\\bYSL\\b"],["Klairs","Klairs"],["Chako","Chako"],["Marvis","Marvis"],["Swisse","Swisse"],["Eucerin","Eucerin"],["Torriden","Torriden"],["Elixir","Elixir x|ELIXIR RETINOL"],["Vichy","\\bVIC x|Vichy"],["Aestura","AESTURA"],["Dr.G","Dr\\.G"],["Decorté","Decort[ée]"],["SVR","\\bSVR\\b"],["Yves Rocher","Yves Rocher"],["Estée Lauder","Est[ée]e Lauder"],["Shiseido","Shiseido"],["Harnn","HARNN"],["&Honey","&HONEY"],["Urban Decay","Urban Decay"],["Florasis","Florasis|Hoa T[âa]y T"],["Mise en scène","Mise en sc"],["Dermalogica","Dermalogica"],["So Natural","So ?Natural"],["Red Chamber","RED CHAMBER"],["Timage","TIMAGE"],["Format","FORMAT x"],["Su:m37","SU:M37"],["Blossomy","BLOSSOMY"],["Jung Saem Mool","JUNG SAEM MOOL"],["Anua","ANUA"],["Purito","PURITO"],["Nuxe","Nuxe"],["Silcot","Silcot"],["Dove","\\bDove\\b"],["Cetaphil","Cetaphil"],["Purité","Purit[ée]"]].map(function(x){return {brand:x[0],re:new RegExp(x[1],'i')}});
+var PARTNER='7494094114027046855', UNK='(Chưa xác định)';
+var custom=[], db=null, dl=null, last=null;
+var $=function(id){return document.getElementById(id)};
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function fmt(n){return Number(n).toLocaleString('vi-VN')}
+function reEsc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
+
+/* ---------- Bước 1: room ID -> link ---------- */
+function roomFrom(v){v=String(v||'').trim();var m=v.match(/room_id=(\d+)/)||v.match(/(\d{12,})/);return m?m[1]:''}
+function linkFor(v){v=String(v||'').trim(); if(/^https?:\/\//.test(v)) return v; var r=roomFrom(v);
+  return r?'https://partner.tiktokshop.com/workbench/live/overview?room_id='+r+'&region=VN&biz_role=2&partner_id='+PARTNER:''}
+$('room').addEventListener('input',function(){var u=linkFor(this.value),a=$('open'),c=$('copylink');
+  if(u){a.href=u;a.setAttribute('aria-disabled','false');c.setAttribute('aria-disabled','false');$('lmsg').textContent='Nếu bấm nút không mở được tab mới, bấm "Sao chép link" rồi dán vào một tab mới.'}
+  else{a.href='#';a.setAttribute('aria-disabled','true');c.setAttribute('aria-disabled','true');$('lmsg').textContent=''}});
+$('copylink').addEventListener('click',function(){var u=linkFor($('room').value),m=$('lmsg'); if(!u) return;
+  function ok(){m.textContent='Đã sao chép link. Mở tab mới, dán link, đợi bảng Products tải xong rồi làm bước 2.'}
+  function manual(){var t=$('clip');t.value=u;t.select();try{document.execCommand('copy');ok()}catch(e){m.textContent=u}}
+  try{navigator.clipboard.writeText(u).then(ok,manual)}catch(e){manual()}});
+$('open').addEventListener('click',function(){$('lmsg').textContent='Đã mở tab LIVE Dashboard. Sang tab đó, nhấn ⌘A rồi ⌘C, quay lại đây dán vào ô số 3.'});
+
+/* ---------- Đọc nội dung dán ---------- */
+function parseLive(text){
+  var toks=String(text||'').replace(/\r/g,'').split(/[\n\t]+/).map(function(s){return s.trim()}).filter(Boolean);
+  var num=function(s){return Number(String(s).replace(/[^\d]/g,''))||0};
+  var isVal=function(t){return /^[\d.,\s]+₫?$/.test(t)||/^[\d.,]+%$/.test(t)||t==='--'||/^[\d.,]+[KkMm]$/.test(t)};
+  var seen={},products=[];
+  for(var i=0;i<toks.length;i++){
+    var m=toks[i].match(/^ID[:：]\s*(\d{6,})$/); if(!m) continue;
+    var id=m[1]; if(seen[id]) continue;
+    var name='';
+    for(var j=i-1;j>=Math.max(0,i-3);j--){var t=toks[j]; if(/[A-Za-zÀ-ỹ]/.test(t)&&t.length>8&&!/^(Pinned|Đã ghim)$/i.test(t)&&!/^ID[:：]/.test(t)){name=t;break}}
+    var vals=[],k=i+1;
+    while(k<toks.length&&vals.length<12){var v=toks[k]; if(/^ID[:：]/.test(v)) break; if(isVal(v)) vals.push(v); else if(vals.length) break; k++}
+    var g=-1; for(var q=0;q<vals.length;q++){ if(/₫/.test(vals[q])){g=q;break} }
+    if(g<0) continue;
+    var after=vals.slice(g+1).filter(function(x){return !/₫|%/.test(x)});
+    seen[id]=1;
+    products.push({id:id,name:name,gmv:num(vals[g]),sold:after.length>=2?num(after[1]):0});
+  }
+  var creator=(text.match(/LIVE Dashboard\s*\n\s*([^\n]+)\n\s*Duration/)||[])[1]||'';
+  var period=(text.match(/\n\s*([A-Z][a-z]{2} \d+, [\d:]+ - [^\n]*UTC[^\n]*)/)||[])[1]||'';
+  var hm=text.match(/Attributed GMV \(₫\)([\s\S]*?)Attributed items sold/);
+  return {products:products,creator:creator.trim(),period:period.trim(),headerGmv:hm?num(hm[1].replace(/GMV MAX active/i,'')):0};
+}
+function brandOf(name){
+  for(var i=0;i<custom.length;i++){ if(custom[i].re.test(name)) return custom[i].brand }
+  for(var j=0;j<DEFAULT.length;j++){ if(DEFAULT[j].re.test(name)) return DEFAULT[j].brand }
+  return UNK;
+}
+function aggregate(data){
+  var agg={},unk=[],total=0;
+  data.products.forEach(function(p){var b=brandOf(p.name); if(b===UNK&&p.gmv>0) unk.push(p);
+    var a=agg[b]||(agg[b]={brand:b,gmv:0,sold:0,sku:0}); a.gmv+=p.gmv; a.sold+=p.sold; a.sku++; total+=p.gmv});
+  var list=Object.keys(agg).map(function(k){return agg[k]}).sort(function(x,y){return y.gmv-x.gmv});
+  return {list:list,unk:unk,total:total};
+}
+
+/* ---------- Hiển thị ---------- */
+function render(){
+  var box=$('result');
+  if(!last||!last.products.length){
+    box.innerHTML='<div class="empty"><b>'+(last?'Không tìm thấy sản phẩm nào':'Chưa có dữ liệu')+'</b>'+(last?'Nội dung vừa dán không có bảng Products. Hãy đợi bảng sản phẩm tải xong trên LIVE Dashboard rồi sao chép lại cả trang.':'Dán nội dung trang LIVE Dashboard ở bước 3, bảng sẽ hiện ở đây.')+'</div>';
+    return;
+  }
+  var r=aggregate(last), live=r.list.filter(function(x){return x.gmv>0}), max=live.length?live[0].gmv:1;
+  var room=roomFrom($('room').value);
+  var h='<div class="sum"><div><b>'+fmt(r.total)+'₫</b><span>Tổng GMV theo sản phẩm</span></div>'
+    +(last.headerGmv?'<div><b>'+fmt(last.headerGmv)+'₫</b><span>GMV trên dashboard</span></div>':'')
+    +'<div><b>'+live.length+'</b><span>Thương hiệu có GMV</span></div></div>'
+    +'<p class="meta">'+esc([last.creator,room?('room '+room):'',last.period].filter(Boolean).join(' | '))+(last.creator||room||last.period?'. ':'')+last.products.length+' sản phẩm.</p>'
+    +'<div class="actions"><button class="btn p" type="button" id="copyt">Sao chép bảng</button>'+'<button class="btn" type="button" id="csv">Tải CSV</button>'+'</div>'
+    +'<div class="tablewrap"><table><thead><tr><th>Thương hiệu</th><th>GMV (₫)</th><th>Tỷ trọng</th><th>SL bán</th><th>Số SKU</th></tr></thead><tbody>'
+    +live.map(function(x){return '<tr'+(x.brand===UNK?' class="unk"':'')+'><td>'+esc(x.brand)+'<div class="bar" style="width:'+Math.max(2,x.gmv/max*100).toFixed(1)+'%"></div></td><td>'+fmt(x.gmv)+'</td><td>'+(r.total?(x.gmv/r.total*100).toFixed(1).replace('.',','):'0')+'%</td><td>'+fmt(x.sold)+'</td><td>'+x.sku+'</td></tr>'}).join('')
+    +'</tbody></table></div>';
+  if(r.unk.length){
+    h+='<div class="unkbox"><h3>'+r.unk.length+' sản phẩm chưa nhận diện được thương hiệu</h3><ul>'
+      +r.unk.map(function(p){return '<li>'+esc(p.name)+' ('+fmt(p.gmv)+'₫)</li>'}).join('')+'</ul>'
+      +(db?'<label for="kw">Thêm quy tắc cho cả team: tên sản phẩm có chứa…</label><div class="row"><input type="text" id="kw" placeholder="Ví dụ Hada Labo"><input type="text" id="bn" placeholder="Thì là thương hiệu…"><button class="btn p" type="button" id="addrule">Lưu quy tắc</button></div><p class="msg" id="rmsg" role="status"></p>'
+          :'<p class="help">Báo người quản lý trang để bổ sung các thương hiệu này.</p>')
+      +'</div>';
+  }
+  if(db&&custom.length){
+    h+='<div class="rules">Quy tắc team đã thêm: '+custom.map(function(c){return '<span>'+esc(c.kw)+' → '+esc(c.brand)+'<button type="button" data-del="'+esc(c.id)+'" aria-label="Xoá quy tắc '+esc(c.kw)+'">×</button></span>'}).join('')+'</div>';
+  }
+  box.innerHTML=h;
+  $('copyt').onclick=function(){copyTable(r,room,this)};
+  if($('csv')) $('csv').onclick=function(){saveCsv(r,room)};
+  if($('addrule')) $('addrule').onclick=addRule;
+  [].forEach.call(box.querySelectorAll('[data-del]'),function(b){b.onclick=function(){delRule(b.getAttribute('data-del'))}});
+}
+function rowsFor(r,room){
+  var head=['Thời điểm','Room ID','Creator','Thương hiệu','GMV','Tỷ trọng','SL bán','Số SKU'], now=new Date().toLocaleString('vi-VN');
+  return [head].concat(r.list.map(function(x){return [now,room,last.creator,x.brand,x.gmv,r.total?(x.gmv/r.total).toFixed(4):0,x.sold,x.sku]}));
+}
+function copyTable(r,room,btn){
+  var tsv=rowsFor(r,room).map(function(row){return row.join('\t')}).join('\n');
+  function ok(){btn.textContent='Đã sao chép, dán vào Google Sheet'}
+  function manual(){var t=$('clip');t.value=tsv;t.select();try{document.execCommand('copy');ok()}catch(e){btn.textContent='Không sao chép được'}}
+  try{navigator.clipboard.writeText(tsv).then(ok,manual)}catch(e){manual()}
+}
+function saveCsv(r,room){
+  var csv='\ufeff'+rowsFor(r,room).map(function(row){return row.map(function(v){v=String(v);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v}).join(',')}).join('\n');
+  var fname='gmv_thuong_hieu_'+(room||'live')+'.csv';
+  if(dl){dl.save({filename:fname,data:csv}).catch(function(e){if(e&&e.code&&e.code!=='declined'){var b=$('csv');if(b)b.textContent='Không tải được file'}});return}
+  try{var u=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));var a=document.createElement('a');a.href=u;a.download=fname;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},2000)}catch(e){var b=$('csv');if(b)b.textContent='Không tải được file'}
+}
+
+/* ---------- Dán ---------- */
+function handle(text){
+  last=parseLive(text);
+  var r=roomFrom($('room').value); if(!r){var m=String(text).match(/room_id=(\d+)/); if(m){$('room').value=m[1];$('room').dispatchEvent(new Event('input'))}}
+  $('pmsg').textContent=last.products.length?('Đã đọc '+last.products.length+' sản phẩm.'):'Chưa thấy bảng Products trong nội dung vừa dán.';
+  render();
+}
+var tmr=null;
+$('paste').addEventListener('input',function(){var v=this.value;clearTimeout(tmr);tmr=setTimeout(function(){handle(v)},200)});
+$('clear').addEventListener('click',function(){$('paste').value='';last=null;$('pmsg').textContent='';render();$('paste').focus()});
+
+/* ---------- Quy tắc thương hiệu dùng chung ---------- */
+function addRule(){
+  var kw=($('kw').value||'').trim(), bn=($('bn').value||'').trim(), msg=$('rmsg');
+  if(!kw||!bn){msg.textContent='Điền cả từ khoá và tên thương hiệu.';return}
+  db.collection('brand_rules').add({keyword:kw,brand:bn,createdAt:new Date().toISOString()})
+    .then(function(){msg.textContent='Đã lưu. Cả team sẽ dùng quy tắc này.'})
+    .catch(function(e){msg.textContent=(e&&e.code==='permission_denied')?'Bạn chưa có quyền lưu quy tắc trên trang này.':'Chưa lưu được, thử lại sau.'});
+}
+function delRule(id){ if(!db) return; db.collection('brand_rules').doc(id).delete().catch(function(){}) }
+
+if(window.claude&&window.claude.use){
+  window.claude.use('downloads').then(function(d){dl=d; if(last) render()});
+  window.claude.use('db').then(function(d){
+    if(!d) return; db=d;
+    db.collection('brand_rules').onSnapshot(function(snap){
+      custom=snap.docs.map(function(doc){var x=doc.data()||{};var kw=String(x.keyword||'').trim(),bn=String(x.brand||'').trim();
+        return kw&&bn?{id:doc.id,kw:kw,brand:bn,re:new RegExp(reEsc(kw),'i')}:null}).filter(Boolean);
+      render();
+    },function(){});
+    if(last) render();
+  });
+}
+render();
+})();
+</script>
+</body>
+</html>
