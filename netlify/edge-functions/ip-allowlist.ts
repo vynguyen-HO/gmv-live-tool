@@ -36,6 +36,9 @@ export default async (_req: Request, context: Context) => {
   if (!blockingOn()) return context.next();
   const ip = context.ip || "";
   if (allowedIps().includes(ip)) return context.next();
+  // Trang không tồn tại (ví dụ khi tool đang tắt) thì ai cũng thấy 404 như nhau.
+  const res = await context.next();
+  if (res.status === 404) return res;
   return new Response(BLOCKED_PAGE(ip), {
     status: 403,
     headers: {
